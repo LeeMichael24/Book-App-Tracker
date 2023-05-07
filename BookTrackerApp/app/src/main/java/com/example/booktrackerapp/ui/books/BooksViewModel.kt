@@ -1,4 +1,4 @@
-package com.example.booktrackerapp.viewmodels
+package com.example.booktrackerapp.ui.books
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY

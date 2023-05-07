@@ -1,8 +1,9 @@
-package com.example.booktrackerapp
+package com.example.booktrackerapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.booktrackerapp.R
 import com.example.booktrackerapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil
             .setContentView(
                 this,
-                R.layout.activity_main)
+                R.layout.activity_main
+            )
     }
 }
 //en esta parte ya se ha activado el data binding para el main activity pero aun falta el del fragment

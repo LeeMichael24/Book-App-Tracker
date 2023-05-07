@@ -1,4 +1,4 @@
-package com.example.booktrackerapp.ui
+package com.example.booktrackerapp.ui.books
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.example.booktrackerapp.R
 import com.example.booktrackerapp.databinding.FragmentBooksBinding
-import com.example.booktrackerapp.viewmodels.BooksViewModel
 
 
 class BooksFragment : Fragment() {
@@ -28,7 +27,6 @@ class BooksFragment : Fragment() {
         //En esta parte queremos devolver la View, entonces hacemos eso, y como el inflater ya esta en la parte de arriba
         // lo unico es enviarselo al binding“ con el id del elemento, el contenedor, y se se opone o no con el padre = false
 
-
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_books,
@@ -41,7 +39,9 @@ class BooksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getBooks()
+        binding.recyclerBooks.adapter = BooksAdapter().apply {
+            submitData(viewModel.getBooks())
+        }
     }
 
 }
